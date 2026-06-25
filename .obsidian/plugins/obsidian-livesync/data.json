@@ -57,7 +57,7 @@
   "ignoreVersionCheck": false,
   "lastReadUpdates": 25,
   "deleteMetadataOfDeletedFiles": false,
-  "syncIgnoreRegEx": "",
+  "syncIgnoreRegEx": ".obsidian/workspace.json|[]|.obsidian/workspace-mobile.json",
   "syncOnlyRegEx": "",
   "customChunkSize": 0,
   "readChunksOnline": true,
@@ -68,14 +68,14 @@
   "useDynamicIterationCount": false,
   "syncAfterMerge": false,
   "configPassphraseStore": "",
-  "encryptedPassphrase": "%$F+SRnz7JwF6yyTMXauZfE6ABTxj9RRPmml7lJ0LQ6QCUfLsn3l62sRjEFJ60iQCX8FzHUbw64bhLBvzmngIMnt8f6TbcB/8WqOd4BV17WjxHM0B+gSB7Cn9zDsnJpfMXZqsejQ7svvStzK9EEqwj",
-  "encryptedCouchDBConnection": "%$F+SRnz7JwF6yyTMXauZfE6ABTxj9RRPmml7lJ0LQ6QBhkFMawfHeOK0F79S7mv+2D0U1hse5DSCLfezQqgcPsLLY1TKZ/FbkwklAe+r8G9fgAx55ZFmjvb+g8XKF3GSnmTnIO5cBjfO2N9rf+Y+uvaoQ6M8BJZzT5YIriFAECax4Hy2TZZUdp0C39VhXoTlRCayJkOOthTbGswP6CxnZBLqRm8G81nAn1Brh5p4klhtBGDrhAn0nppCCjAGMsjqbKjAZllLe+oYbsTY0Z1GXn2HQnNrdmtaEQaPieOipo65NqoML1xn6qHa9GjbQoZE2+VUbyQIVNa9tzANjyMarb2GBy0R0fopR0j91PUAwzCfd8X3ZRD4t41Neh4feffM2wtsdxu4JSLanwRYqojbeJHefidtxt87rNlS7ZMI+IDPPGxBFzIwm6PXO8assxoO0l7C0VMu2kCXmtCVeMz3O95FdXm9adgsfAS7pXRJ2/ZKEhperdZhQGv2Y09Ms/BCg1gIHcyDOAqrYQGrBKnWjK+TG/dShXTxF6zYDfDduWEfcDkKTnZkk8qi21Q13Yl0tYAxLEwKY3pPN1BvLCSkVkvAsf4QswSb6Dhhp21RbYgP+lkrEclkR8cSgoSbkBMBYm7rA5RieptNuZKAJLL6HN7uKeP4hQLN/K0PzpdtUBUq4T2KtxfShMgEYMHyKgXaBY9siUHU=",
+  "encryptedPassphrase": "%$hEYZO4cbG/jlxehOMREb8hCNuUId0CMLFWnqMaV3skAmZS6eI+RNNp7A7KresW+Vvlwwlp7VoZ5Zb+QnpAAekDMTw//UngfypUim25fGfVM0zxPzbIqKCFsyVORlTPN2Ui0+93rbb0YRw/97EXi9",
+  "encryptedCouchDBConnection": "%$hEYZO4cbG/jlxehOMREb8hCNuUId0CMLFWnqMaV3skBc3epunEukGsrTx/WA3TewcFP2riSAKFXYbbXvXAuIYpscoDiqR7mkqlI5n3A65klEeruKkX4GyJDAXK7pRjpRGClgQC02YXE6/6SbBKETB0VXo4JjFqg1wR0TvN1WeeE7/z0co9Z/dSalInOceOgSdWNLAuTTjx2G+YnkmjWBDxP6pl+wnyxG6HtO36WZNKKwtEkYOUPHPCvy0BU01xh+OSYa4gTU8eTtEFetDkJWmiYEUeGZfjrBoF2OQ5+UTmPI4xyiRg3G8Tlq7QUWcY8RpcieAUSbWkedya1ZEdhl+Kv5wFe3kQhV+U7qa/BSPtU3KRUrNeIgfgAjzWE/tmfyoBuoQge9YOeJ3f3GyzAKTw/1Ey1wc5ADWAhx/kX3PCB7Q/NRCRx+7FlhI0uRrvc3PLwm66M9/kNy3A46w28nBsGiVuRoOjfgB+pW93FqqSevvcYhyHO33aj9GQVdts7xDOFI1Yii6OWUNVjj/jI6WL7FApBq/H7MKYBmCx+m4elywfE+wHRzvEqtNeolcDzsOusmXyJY0HeHDR0bkUD1UpSOU1a39kHxEyHlbt324yFMdFHnwPugko9SbNOVGkJIyrDM+wXXFACLu8sxTqMhPTwiIxHISr9A37P4HHpppsCFPAzoE5wIYvLjJe+xq9Wnd16p1MA=",
   "permitEmptyPassphrase": false,
   "remoteConfigurations": {
     "legacy-couchdb": {
       "id": "legacy-couchdb",
       "name": "CouchDB Remote",
-      "uri": "%$F+SRnz7JwF6yyTMXauZfE6ABTxj9RRPmml7lJ0LQ6QAP1gpXDSurnLG2Cr44kUSZcXZeqsR2J4o87E7jJBC/DbQxIva9LTOB8F+qTr8JfK6i+mn5ZOxQ6oHCSAQjsN++i/J7u2uq/ixavYxibKfadqR4bn0db/okiE5s6HoAm9NH+gHkPbHYFGy0fm/aLjE3bALkMPHnHS1TuVpFi8bj3w==",
+      "uri": "%$hEYZO4cbG/jlxehOMREb8hCNuUId0CMLFWnqMaV3skAJdCWsL6eaIVE3R/8RzFeXQmLvTXduq+K7F2m27XlwKRxidiQ9KSd0x01zJaf1N3rRbH3GxL8nyCWS0m64CfL83/8/npdINySuiDJvY/wjGj6SzxLptOc8e6woG5d7ZtKBu7KIBzqBhLC2WSweHfZAcVc0mneojpEiBnf8XuNITw==",
       "isEncrypted": true
     }
   },
