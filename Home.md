@@ -9,6 +9,7 @@ const TWO_WEEKS_MS = 14 * 24 * 60 * 60 * 1000;
 
 const { CalendarCards } = customJS;
 
+CalendarCards.renderTasksSection(dv.container, dv, 5);
 await CalendarCards.renderCalendarSection(dv.container, MEETINGS_ICS, HOLIDAYS_ICS, TWO_WEEKS_MS);
 ```
 

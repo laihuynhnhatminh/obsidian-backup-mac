@@ -1,0 +1,3 @@
+- [ ] Review RSS service architecture 📅 2026-06-28 ⏫ 
+- [ ] Submit visa documents 📅 2026-06-28
+- [ ] Renew domain himemiya.dev 📅 2026-07-10

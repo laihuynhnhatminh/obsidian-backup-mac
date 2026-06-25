@@ -103,3 +103,7 @@
 
 .cal-card.accent-blue  .cal-badge.is-urgent { background: #7eb8f7; }
 .cal-card.accent-amber .cal-badge.is-urgent { background: #f7c948; }
+
+.cal-card.accent-red  { border-left: 3px solid #f77b72; }
+.cal-card.accent-red  .cal-card-header { color: #f77b72; }
+.cal-card.accent-red  .cal-badge.is-urgent { background: #f77b72; }
