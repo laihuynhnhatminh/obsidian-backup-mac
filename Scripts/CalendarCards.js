@@ -5,11 +5,15 @@ class CalendarCards {
         this._cacheTtlMs = 5 * 60 * 1000; // 5 minutes
     }
 
+    // ── Cache ────────────────────────────────────────────────
+
     _isCacheValid(key) {
         const entry = this._cache[key];
         if (!entry) return false;
         return (Date.now() - entry.timestamp) < this._cacheTtlMs;
     }
+
+    // ── ICS Parsing ──────────────────────────────────────────
 
     parseICS(text) {
         const events = [];
@@ -22,16 +26,6 @@ class CalendarCards {
             const get = (key) => {
                 const m = b.match(new RegExp(`${key}[^:]*:([^\\r\\n]+)`));
                 return m ? m[1].trim() : null;
-            };
-
-            const parseDate = (str) => {
-                if (!str) return null;
-                if (str.length === 8) {
-                    return new Date(`${str.slice(0, 4)}-${str.slice(4, 6)}-${str.slice(6, 8)}`);
-                }
-                return new Date(
-                    `${str.slice(0, 4)}-${str.slice(4, 6)}-${str.slice(6, 8)}T${str.slice(9, 11)}:${str.slice(11, 13)}:${str.slice(13, 15)}Z`
-                );
             };
 
             const extractMeetUrl = (block) => {
@@ -49,7 +43,7 @@ class CalendarCards {
             if (!dtstart || !summary) continue;
 
             const url = extractMeetUrl(b) ?? get("URL") ?? null;
-            events.push({ title: summary, date: parseDate(dtstart), url });
+            events.push({ title: summary, date: this.parseDate(dtstart), url });
         }
 
         return events.filter(e => e.date !== null);
@@ -58,7 +52,6 @@ class CalendarCards {
     parseDate(str) {
         if (!str) return null;
 
-        // Date-only: YYYYMMDD
         if (str.length === 8) {
             return new Date(`${str.slice(0, 4)}-${str.slice(4, 6)}-${str.slice(6, 8)}`);
         }
@@ -66,14 +59,12 @@ class CalendarCards {
         const y = str.slice(0, 4), mo = str.slice(4, 6), d = str.slice(6, 8);
         const h = str.slice(9, 11), mi = str.slice(11, 13), s = str.slice(13, 15);
 
-        // Explicit UTC (ends with Z)
         if (str.endsWith("Z")) {
             return new Date(`${y}-${mo}-${d}T${h}:${mi}:${s}Z`);
         }
 
-        // Floating/local time — treat as local, NOT UTC
         return new Date(`${y}-${mo}-${d}T${h}:${mi}:${s}`);
-    };
+    }
 
     async fetchEvents(url) {
         if (this._isCacheValid(url)) {
@@ -95,6 +86,8 @@ class CalendarCards {
         }
     }
 
+    // ── Helpers ──────────────────────────────────────────────
+
     getDaysLabel(date) {
         const now = new Date();
         const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -106,6 +99,8 @@ class CalendarCards {
         return `in ${diffDays} days`;
     }
 
+    // ── Rendering ────────────────────────────────────────────
+
     renderSection(container, title, emoji, accentClass, events, windowMs) {
         const now = new Date();
         const cutoff = new Date(now.getTime() + windowMs);
@@ -116,9 +111,7 @@ class CalendarCards {
         if (filtered.length === 0) return false;
 
         const card = container.createEl("div", { cls: `cal-card ${accentClass}` });
-
-        const header = card.createEl("div", { cls: "cal-card-header" });
-        header.setText(`${emoji}  ${title}`);
+        card.createEl("div", { cls: "cal-card-header", text: `${emoji}  ${title}` });
 
         for (const ev of filtered) {
             const row = card.createEl("div", { cls: "cal-card-row" });
@@ -146,10 +139,58 @@ class CalendarCards {
             });
         }
 
-        return true; // had events
+        return true;
     }
 
-    // Convenience: render meetings + holidays with separator
+    renderTasksSection(container, dv, days = 5) {
+        const now = new Date();
+        const cutoff = new Date(now.getTime() + days * 24 * 60 * 60 * 1000);
+
+        const tasks = dv.pages()
+            .file.tasks
+            .where(t => !t.completed && t.due)
+            .where(t => {
+                const due = new Date(t.due);
+                return due >= now && due <= cutoff;
+            })
+            .sort(t => t.due);
+
+        if (tasks.length === 0) return false;
+
+        const card = container.createEl("div", { cls: "cal-card accent-red" });
+        card.createEl("div", { cls: "cal-card-header", text: "⚠️  Due soon" });
+
+        for (const task of tasks) {
+            const row = card.createEl("div", { cls: "cal-card-row" });
+            const left = row.createEl("div");
+
+            const titleRow = left.createEl("div", { cls: "cal-card-title-row" });
+            const taskLink = titleRow.createEl("a", { cls: "cal-card-title", text: task.text });
+            taskLink.setAttribute("href", task.path);
+            taskLink.onclick = (e) => {
+                e.preventDefault();
+                app.workspace.openLinkText(task.path, "", false);
+            };
+
+            const due = new Date(task.due);
+            const dateStr = due.toLocaleDateString("en-AU", {
+                weekday: "short", month: "short", day: "numeric"
+            });
+            left.createEl("div", { cls: "cal-card-date", text: `📄 ${task.path}  —  ${dateStr}` });
+
+            const daysLabel = this.getDaysLabel(due);
+            const isUrgent = daysLabel === "today" || daysLabel === "tomorrow";
+            row.createEl("div", {
+                cls: `cal-badge${isUrgent ? " is-urgent" : ""}`,
+                text: daysLabel
+            });
+        }
+
+        return true;
+    }
+
+    // ── Convenience ──────────────────────────────────────────
+
     async renderCalendarSection(container, meetingsUrl, holidaysUrl, windowMs) {
         const [meetings, holidays] = await Promise.all([
             this.fetchEvents(meetingsUrl),
@@ -168,7 +209,7 @@ class CalendarCards {
         if (hasHolidays) {
             this.renderSection(container, "Public Holidays", "🎌", "accent-amber", holidays, windowMs);
         }
-        
+
         if (hasMeetings || hasHolidays) {
             container.createEl("hr");
         }
