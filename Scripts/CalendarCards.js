@@ -1,20 +1,5 @@
 class CalendarCards {
-
-    constructor() {
-        this._cache = {};
-        this._cacheTtlMs = 5 * 60 * 1000; // 5 minutes
-    }
-
-    // ── Cache ────────────────────────────────────────────────
-
-    _isCacheValid(key) {
-        const entry = this._cache[key];
-        if (!entry) return false;
-        return (Date.now() - entry.timestamp) < this._cacheTtlMs;
-    }
-
     // ── ICS Parsing ──────────────────────────────────────────
-
     parseICS(text) {
         const events = [];
         const unfolded = text.replace(/\r\n[ \t]/g, "").replace(/\n[ \t]/g, "");
@@ -67,18 +52,15 @@ class CalendarCards {
     }
 
     async fetchEvents(url) {
-        if (this._isCacheValid(url)) {
-            console.log("CalendarCards: cache hit");
-            return this._cache[url].data;
-        }
-
         try {
-            const { requestUrl } = require("obsidian");
-            const r = await requestUrl({ url });
-            const data = this.parseICS(r.text);
+            const r = await customJS.ObsidianFetcher.request(url, { cached: true, cachedKey: url });
 
-            this._cache[url] = { data, timestamp: Date.now() };
-            console.log("CalendarCards: fetched & cached");
+            if (!r) {
+                console.warn(`CalendarCards: failed to fetch ${url}`);
+                return [];
+            }
+
+            const data = this.parseICS(r.text);
             return data;
         } catch (e) {
             console.log("CalendarCards fetch error", e);

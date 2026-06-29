@@ -1,0 +1,340 @@
+/* Raw Palette */
+:root {
+    /* Warm dark base */
+    --_base-100: #1a1814;
+    --_base-200: #201e1a;
+    --_base-300: #272420;
+    --_base-400: #2e2b27;
+    --_base-500: #38342f;
+    --_base-600: #47423c;
+
+    /* Text scale (warm off-white) */
+    --_text-100: #f0ece6;
+    --_text-200: #b8b0a6;
+    --_text-300: #7a7269;
+    --_text-400: #4a4540;
+
+    /* Slate-blue primary */
+    --_primary-100: #1c2740;
+    --_primary-200: #253354;
+    --_primary-300: #3d5a8a;
+    --_primary-400: #5c80bd;
+    --_primary-500: #7ea0d4;
+    --_primary-600: #c2d4ef;
+
+    /* Cool slate secondary */
+    --_secondary-100: #1d2230;
+    --_secondary-200: #262d40;
+    --_secondary-300: #3a4460;
+    --_secondary-400: #566080;
+    --_secondary-500: #7480a0;
+    --_secondary-600: #b4bdd4;
+
+    /* Success (green) */
+    --_success-bg: #1a2e20;
+    --_success-border: #2e6640;
+    --_success-text: #6dba82;
+    --_success-solid: #3d8f56;
+
+    /* Warning (amber) */
+    --_warning-bg: #2e2010;
+    --_warning-border: #70460e;
+    --_warning-text: #d4944a;
+    --_warning-solid: #a0620e;
+
+    /* Error (red) */
+    --_error-bg: #2e1414;
+    --_error-border: #6e2828;
+    --_error-text: #d47272;
+    --_error-solid: #a03838;
+
+    /* Info (blue, shares primary family) */
+    --_info-bg: #1a2438;
+    --_info-border: #2e4870;
+    --_info-text: #7aa0d4;
+    --_info-solid: #3d6499;
+}
+
+/* Raw CSS Variables */
+:root {
+    /* Surfaces */
+    --ui-bg-base: var(--_base-100);
+    --ui-surface-0: var(--_base-200);
+    --ui-surface-1: var(--_base-300);
+    --ui-surface-2: var(--_base-400);
+    --ui-surface-3: var(--_base-500);
+    --ui-border: 1px solid var(--_base-600);
+    --ui-border-color: var(--_base-600);
+    --ui-border-strong: 1px solid var(--_secondary-300);
+
+    /* Text */
+    --ui-text-primary: var(--_text-100);
+    --ui-text-secondary: var(--_text-200);
+    --ui-text-muted: var(--_text-300);
+    --ui-text-disabled: var(--_text-400);
+
+    /* Primary */
+    --ui-primary-bg: var(--_primary-100);
+    --ui-primary-muted: var(--_primary-200);
+    --ui-primary-border: var(--_primary-300);
+    --ui-primary: var(--_primary-400);
+    --ui-primary-hover: var(--_primary-500);
+    --ui-primary-text: var(--_primary-600);
+
+    /* Secondary */
+    --ui-secondary-bg: var(--_secondary-100);
+    --ui-secondary-muted: var(--_secondary-200);
+    --ui-secondary-border: var(--_secondary-300);
+    --ui-secondary: var(--_secondary-400);
+    --ui-secondary-hover: var(--_secondary-500);
+    --ui-secondary-text: var(--_secondary-600);
+
+    /* Semantic */
+    --ui-success-bg: var(--_success-bg);
+    --ui-success-border: var(--_success-border);
+    --ui-success-text: var(--_success-text);
+    --ui-success-solid: var(--_success-solid);
+
+    --ui-warning-bg: var(--_warning-bg);
+    --ui-warning-border: var(--_warning-border);
+    --ui-warning-text: var(--_warning-text);
+    --ui-warning-solid: var(--_warning-solid);
+
+    --ui-error-bg: var(--_error-bg);
+    --ui-error-border: var(--_error-border);
+    --ui-error-text: var(--_error-text);
+    --ui-error-solid: var(--_error-solid);
+
+    --ui-info-bg: var(--_info-bg);
+    --ui-info-border: var(--_info-border);
+    --ui-info-text: var(--_info-text);
+    --ui-info-solid: var(--_info-solid);
+
+    /* Spacing */
+    --ui-space-xs: 4px;
+    --ui-space-sm: 8px;
+    --ui-space-md: 16px;
+    --ui-space-lg: 24px;
+    --ui-space-xl: 32px;
+
+    /* Radius */
+    --ui-radius-sm: 4px;
+    --ui-radius-md: 8px;
+    --ui-radius-lg: 12px;
+
+    /* Typography */
+    --ui-font-size-xs: 0.7rem;
+    --ui-font-size-sm: 0.75rem;
+    --ui-font-size-base: 0.875rem;
+    --ui-font-size-md: 1rem;
+    --ui-font-size-lg: 1.125rem;
+}
+
+
+/* COMPONENTS */
+
+/* --- Badge --- */
+.ui-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--ui-space-xs) var(--ui-space-sm);
+    border-radius: var(--ui-radius-sm);
+    font-size: var(--ui-font-size-sm);
+    font-weight: 500;
+    line-height: 1;
+    background-color: var(--ui-badge-bg, var(--ui-primary-muted));
+    color: var(--ui-badge-color, var(--ui-primary-text));
+    border: 1px solid var(--ui-badge-border, var(--ui-primary-border));
+}
+
+.ui-badge-secondary {
+    --ui-badge-bg: var(--ui-secondary-muted);
+    --ui-badge-color: var(--ui-secondary-text);
+    --ui-badge-border: var(--ui-secondary-border);
+}
+
+.ui-badge-success {
+    --ui-badge-bg: var(--ui-success-bg);
+    --ui-badge-color: var(--ui-success-text);
+    --ui-badge-border: var(--ui-success-border);
+}
+
+.ui-badge-warning {
+    --ui-badge-bg: var(--ui-warning-bg);
+    --ui-badge-color: var(--ui-warning-text);
+    --ui-badge-border: var(--ui-warning-border);
+}
+
+.ui-badge-error {
+    --ui-badge-bg: var(--ui-error-bg);
+    --ui-badge-color: var(--ui-error-text);
+    --ui-badge-border: var(--ui-error-border);
+}
+
+.ui-badge-info {
+    --ui-badge-bg: var(--ui-info-bg);
+    --ui-badge-color: var(--ui-info-text);
+    --ui-badge-border: var(--ui-info-border);
+}
+
+
+/* --- Card --- */
+.ui-card {
+    padding: var(--ui-space-md);
+    border-radius: var(--ui-radius-md);
+    border: var(--ui-border);
+    background: var(--ui-surface-1);
+    color: var(--ui-text-primary);
+}
+
+.ui-card-primary {
+    background: var(--ui-primary-bg);
+    border-color: var(--ui-primary-border);
+}
+
+.ui-card-secondary {
+    background: var(--ui-secondary-bg);
+    border-color: var(--ui-secondary-border);
+}
+
+.ui-card>h1,
+.ui-card>h2,
+.ui-card>h3,
+.ui-card>h4 {
+    margin: 0 0 var(--ui-space-sm) 0;
+    color: var(--ui-text-primary);
+}
+
+.ui-card>p {
+    margin: 0;
+    color: var(--ui-text-secondary);
+    font-size: var(--ui-font-size-base);
+}
+
+
+/* --- Button --- */
+.ui-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ui-space-xs);
+    padding: var(--ui-space-xs) var(--ui-space-md);
+    border-radius: var(--ui-radius-sm);
+    font-size: var(--ui-font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--ui-primary-border);
+    background: var(--ui-primary-muted);
+    color: var(--ui-primary-text);
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.ui-btn:hover {
+    background: var(--ui-primary-border);
+    border-color: var(--ui-primary);
+}
+
+.ui-btn-secondary {
+    border-color: var(--ui-secondary-border);
+    background: var(--ui-secondary-muted);
+    color: var(--ui-secondary-text);
+}
+
+.ui-btn-secondary:hover {
+    background: var(--ui-secondary-border);
+    border-color: var(--ui-secondary);
+}
+
+.ui-btn-ghost {
+    background: transparent;
+    border-color: var(--ui-border-color);
+    color: var(--ui-text-secondary);
+}
+
+.ui-btn-ghost:hover {
+    background: var(--ui-surface-2);
+    border-color: var(--ui-border-color);
+    color: var(--ui-text-primary);
+}
+
+.ui-btn-solid {
+    background: var(--ui-primary);
+    border-color: var(--ui-primary);
+    color: #fff;
+}
+
+.ui-btn-solid:hover {
+    background: var(--ui-primary-hover);
+    border-color: var(--ui-primary-hover);
+}
+
+
+/* --- Pill / Tag --- */
+.ui-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px var(--ui-space-sm);
+    border-radius: 999px;
+    font-size: var(--ui-font-size-xs);
+    font-weight: 500;
+    background: var(--ui-surface-3);
+    color: var(--ui-text-secondary);
+    border: var(--ui-border);
+}
+
+
+/* --- Divider --- */
+.ui-divider {
+    height: 1px;
+    background: var(--ui-border-color);
+    border: none;
+    margin: var(--ui-space-md) 0;
+}
+
+
+/* --- Layout helpers --- */
+.ui-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--ui-space-sm);
+    flex-wrap: wrap;
+}
+
+.ui-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ui-space-sm);
+}
+
+.ui-grid {
+    display: grid;
+    gap: var(--ui-space-md);
+    grid-template-columns: repeat(var(--ui-grid-cols, 2), 1fr);
+}
+
+/* --- Stat / metric card --- */
+.ui-stat {
+    padding: var(--ui-space-md);
+    border-radius: var(--ui-radius-md);
+    border: var(--ui-border);
+    background: var(--ui-surface-1);
+}
+
+.ui-stat-label {
+    font-size: var(--ui-font-size-sm);
+    color: var(--ui-text-muted);
+    margin: 0 0 var(--ui-space-xs) 0;
+}
+
+.ui-stat-value {
+    font-size: var(--ui-font-size-lg);
+    font-weight: 600;
+    color: var(--ui-text-primary);
+    margin: 0;
+}
+
+.ui-stat-sub {
+    font-size: var(--ui-font-size-xs);
+    color: var(--ui-text-muted);
+    margin: var(--ui-space-xs) 0 0 0;
+}

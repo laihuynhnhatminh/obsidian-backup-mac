@@ -2,6 +2,7 @@
   "theme": "obsidian",
   "enabledCssSnippets": [
     "MCL Multi Column",
-    "Custom Styles"
+    "Custom Styles",
+    "Obsidian Component"
   ]
 }

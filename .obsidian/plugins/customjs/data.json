@@ -1,5 +1,5 @@
 {
-  "jsFiles": "Scripts/CalendarCards.js",
+  "jsFiles": "Scripts/CalendarCards.js,Scripts/ObsidianFetcher.js",
   "jsFolder": "Scripts/",
   "startupScriptNames": [],
   "registeredInvocableScriptNames": [],
