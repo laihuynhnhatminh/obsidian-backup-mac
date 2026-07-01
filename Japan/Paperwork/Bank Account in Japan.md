@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Paperwork/index|← Paperwork]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## When to Do It
 
 As soon as possible after arriving — ideally within the **first 1–2 weeks**. You'll need a Japanese bank account for:

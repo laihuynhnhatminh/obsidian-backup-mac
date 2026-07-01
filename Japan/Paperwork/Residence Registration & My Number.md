@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Paperwork/index|← Paperwork]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## Priority: Do This Within 14 Days of Moving In
 
 After arriving in Japan and finding your apartment, you must **register your address at the local ward/city office (区役所 / 市役所)**. This is the foundation of everything else — health insurance, pension, My Number, bank accounts — all require a registered address first.

@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Living/Sapporo/index|← Sapporo]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## Overview
 
 Sapporo sits in the **humid continental climate zone** — think Chicago or Toronto, but with far more snow. Annual average temperature is around **6.5°C**, with January lows hitting **-4.9°C** (and wind chill making it feel much colder). It receives approximately **483 cm of snow per year**, making it one of the snowiest major cities in the world.

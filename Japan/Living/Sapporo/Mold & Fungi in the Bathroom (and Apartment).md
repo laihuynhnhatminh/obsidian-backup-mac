@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Living/Sapporo/index|← Sapporo]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## Why It's a Big Deal
 
 Mold is relentless in Japanese apartments — especially in summer during the rainy season (梅雨 / tsuyu, June–July) and even in Sapporo winters due to condensation from heating. Even a clean apartment will get mold if you don't actively manage humidity and ventilation. The mold is typically **black** and can spread fast overnight in warm, damp conditions.

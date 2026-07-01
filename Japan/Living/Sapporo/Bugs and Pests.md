@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Living/Sapporo/index|← Sapporo]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## The Reality Check
 
 Even in a spotless apartment in a brand-new building, bugs will visit. Japan's climate — especially the warm, humid summer months (June–September) — creates perfect conditions for pests. Sapporo has milder bug seasons than Tokyo or Osaka, but it's not immune, especially from June through September.

@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Paperwork/index|← Paperwork]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## The Rule: Both Are Mandatory
 
 All foreign residents in Japan staying **3+ months** are legally required to enroll in **both** the public health insurance system and the pension system. This is not optional — and gaps in payment will affect future visa renewals and permanent residency applications.

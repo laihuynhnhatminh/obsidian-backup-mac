@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Paperwork/index|← Paperwork]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## Overview
 
 For most foreign workers coming to Japan, the process follows this order:

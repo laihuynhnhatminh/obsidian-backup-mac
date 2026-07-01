@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Living/Sapporo/index|← Sapporo]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## Getting Around
 
 ### Public Transit

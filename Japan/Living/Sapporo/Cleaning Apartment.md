@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Living/Sapporo/index|← Sapporo]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## Why This Matters More Than Back Home
 
 Japanese apartments are small, ventilation is limited, and humidity fluctuates dramatically across seasons. Neglecting cleaning leads to mold, pests, and potentially being charged for damage when you move out (退去費用). Being systematic about it makes life much easier.

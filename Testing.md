@@ -10,12 +10,6 @@ CalendarCards.renderTasksSection(dv.container, dv, 5);
 
 
 
-
-
-
-
-
-
 Current subscription
 
 - Claude: 22 usd

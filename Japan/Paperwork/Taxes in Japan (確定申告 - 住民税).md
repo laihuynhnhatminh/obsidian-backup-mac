@@ -1,3 +1,7 @@
+<span class="mcl-back-button">[[Japan/Paperwork/index|← Paperwork]]</span> <span class="mcl-back-button">[[Home|🏠 Home]]</span>
+
+---
+
 ## Overview
 
 Japan has two main taxes relevant to you as a foreign resident employee:
